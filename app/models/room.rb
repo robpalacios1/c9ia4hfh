@@ -13,4 +13,9 @@
 #
 
 class Room < ActiveRecord::Base
+	validates :title, presence: true
+	validates :description, presence: true
+	validates :beds, presence: true
+	validates :guests, presence: true
+	validates :image_url, presence: true
 end
