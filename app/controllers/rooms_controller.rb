@@ -20,4 +20,8 @@ class RoomsController < ApplicationController
     def room_params
       params.require(:room).permit(:title, :description, :beds, :guests, :image_url)
     end
+
+  def edit
+    @room = Room.find(params[:id])
+  end
 end
