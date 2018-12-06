@@ -7,6 +7,10 @@ class RoomsController < ApplicationController
     @room = Room.new
   end
 
+   def edit
+    @room = Room.find(params[:id])
+  end
+
   def create
     @room = Room.new(room_params)
     if @room.save
@@ -20,8 +24,4 @@ class RoomsController < ApplicationController
     def room_params
       params.require(:room).permit(:title, :description, :beds, :guests, :image_url, :price_per_night)
     end
-
-  def edit
-    @room = Room.find(params[:id])
-  end
 end
